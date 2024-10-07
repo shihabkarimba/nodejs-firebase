@@ -1,7 +1,7 @@
 var admin = require("firebase-admin");
 
-const stagingserviceAccount = JSON.parse(process.env.STAGING_FIREBASE_SERVICE_ACCOUNT_KEY);
-const prodServiceAccount = JSON.parse(process.env.PROD_FIREBASE_SERVICE_ACCOUNT_KEY);
+const stagingserviceAccount = require('../stagingServiceKey.json');
+const prodServiceAccount = require('../prodServiceKey.json');
 
 const NODE_ENV = process.env.NODE_ENV || 'staging';
 
