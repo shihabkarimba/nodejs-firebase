@@ -1,8 +1,5 @@
 var admin = require("firebase-admin");
 
-const stagingserviceAccount = require('../stagingServiceKey.json');
-const prodServiceAccount = require('../prodServiceKey.json');
-
 const NODE_ENV = process.env.NODE_ENV || 'staging';
 
 const initializeFirebase = (serviceAccount) => {
@@ -15,10 +12,10 @@ const initializeFirebase = (serviceAccount) => {
 };
 
 if (NODE_ENV === 'prod') {
-    initializeFirebase(prodServiceAccount);
+    initializeFirebase(require('../prodServiceKey.json'));
     console.log('prod db initialized')
 } else {
-    initializeFirebase(stagingserviceAccount);
+    initializeFirebase(require('../prodServiceKey.json'));
     console.log('staging db initialized')
 }
 
