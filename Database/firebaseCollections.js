@@ -6,4 +6,5 @@ const Users = db.collection('users');
 
 module.exports = {
     Users,
+    admin,
 }
